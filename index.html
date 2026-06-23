@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mwitwa in Montenegro — Jun 26 → Jul 2 '26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#241c1e; --ink-2:#574748; --stone:#f6efe0; --stone-2:#ece0c9;
+    --crimson:#bb1d2c; --crimson-d:#8c1622; --gold:#c79a2b; --gold-2:#e3c05a; --gold-l:#f3de9c;
+    --pine:#2f6f4f; --slate:#2f7d8c;
+    --line:rgba(36,28,30,.14); --shadow:0 18px 40px rgba(36,20,24,.16);
+    --tag-culture:#c0901f; --tag-food:#b5642e; --tag-adrenaline:#bb1d2c;
+    --tag-sea:#2f7d8c; --tag-mountains:#2f6f4f; --tag-chill:#8a7a64; --tag-travel:#6b7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--stone);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.disp{font-family:"Bricolage Grotesque",sans-serif;letter-spacing:-.02em;line-height:1.0}
+  a{color:inherit}
+  .container{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* ---------------- FOLK PATTERN BAND ---------------- */
+  .folk{height:15px;background:var(--crimson-d);
+    background-image:linear-gradient(45deg,var(--gold) 25%,transparent 25%),linear-gradient(-45deg,var(--gold) 25%,transparent 25%);
+    background-size:18px 18px;background-position:0 0}
+
+  /* ---------------- HERO ---------------- */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#211a1d 0%,#5e1521 52%,#8c1a27 100%);color:#fbf2e2}
+  .hero svg.mtn{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+  .hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(33,26,29,0) 40%,rgba(28,18,22,.45) 76%,rgba(22,12,16,.66) 100%)}
+  .medallion{position:absolute;top:6%;left:50%;transform:translateX(-50%);width:128px;height:128px;border-radius:50%;z-index:0;
+    background:radial-gradient(circle,#fbe9b6,#e3c05a 52%,#c79a2b 72%,#9c7414 100%);box-shadow:0 0 78px 26px rgba(199,154,43,.4)}
+  .medallion::before{content:"";position:absolute;inset:-34px;border-radius:50%;z-index:-1;opacity:.5;
+    background:repeating-conic-gradient(from 0deg,rgba(227,192,90,.55) 0deg 4deg,transparent 4deg 14deg)}
+  .medallion::after{content:"";position:absolute;inset:14px;border-radius:50%;border:2px solid rgba(120,86,12,.45)}
+  .hero-inner{position:relative;z-index:3;padding:62px 22px 116px;text-align:center}
+  .eyebrow{font-weight:700;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--gold-l);margin-bottom:16px}
+  .hero h1{font-size:clamp(42px,9vw,100px);font-weight:800;text-shadow:0 4px 30px rgba(0,0,0,.34)}
+  .hero h1 .o{color:var(--gold-2)}
+  .hero .dates{margin-top:18px;font-size:clamp(16px,2.4vw,22px);font-weight:600;color:#fbe6cf}
+  .hero .sub{margin:14px auto 0;max-width:52ch;color:#f1dcc0;font-size:16px}
+  .crewtag{display:inline-flex;gap:9px;align-items:center;margin-top:24px;background:rgba(28,18,22,.5);border:1px solid rgba(227,192,90,.5);
+    padding:9px 18px;border-radius:40px;font-weight:600;font-size:14px;backdrop-filter:blur(8px);box-shadow:0 8px 24px rgba(20,10,14,.34);text-shadow:0 1px 6px rgba(0,0,0,.4)}
+  .hero-stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .hstat{background:rgba(28,18,22,.52);border:1px solid rgba(227,192,90,.42);border-radius:14px;padding:14px 20px;min-width:120px;
+    backdrop-filter:blur(8px);box-shadow:0 8px 24px rgba(20,10,14,.34)}
+  .hstat b{display:block;font-family:"Bricolage Grotesque";font-size:30px;font-weight:800;color:var(--gold-2);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+  .hstat span{font-size:12.5px;letter-spacing:.05em;color:#f4e6cf;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+
+  /* ---------------- ROUTE STRIP ---------------- */
+  .route{background:#1d1417;color:#fbf2e2;padding:22px 0}
+  .route-scroll{display:flex;align-items:center;gap:8px;overflow-x:auto;padding-bottom:6px}
+  .route-scroll::-webkit-scrollbar{height:6px}
+  .route-scroll::-webkit-scrollbar-thumb{background:rgba(227,192,90,.4);border-radius:4px}
+  .stop{flex:0 0 auto;text-align:center}
+  .stop .dot{font-size:22px}
+  .stop .nm{font-family:"Bricolage Grotesque";font-weight:700;font-size:16px;margin-top:2px}
+  .stop .nights{font-size:12px;color:var(--gold-l)}
+  .leg{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;color:var(--gold-2);font-size:12px;font-weight:600;padding:0 4px;min-width:62px}
+  .leg .ln{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--gold-2) 0 6px,transparent 6px 11px);margin-bottom:4px}
+
+  /* ---------------- NAV ---------------- */
+  nav{position:sticky;top:0;z-index:40;background:rgba(246,239,224,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;gap:6px;align-items:center;padding:10px 22px;max-width:1080px;margin:0 auto;overflow-x:auto}
+  .nav-inner .brand{font-family:"Bricolage Grotesque";font-weight:800;margin-right:auto;font-size:16px;white-space:nowrap}
+  .nav-inner a{text-decoration:none;font-weight:600;font-size:14px;color:var(--ink-2);padding:8px 14px;border-radius:9px;white-space:nowrap;transition:.15s}
+  .nav-inner a:hover{background:var(--stone-2)}
+  .nav-inner a.on{background:var(--crimson);color:#fff}
+
+  section{padding:62px 0}
+  .sec-head{margin-bottom:30px}
+  .sec-head .kick{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:12.5px;color:var(--crimson)}
+  .sec-head h2{font-size:clamp(30px,5vw,46px);font-weight:800;margin-top:8px}
+  .sec-head p{margin-top:10px;color:var(--ink-2);max-width:64ch;font-size:16.5px}
+
+  /* ---------------- NOTE BANNER ---------------- */
+  .note{background:linear-gradient(120deg,#fbf2dd,#f6ead0);border:1px solid #e6cf9b;border-left:6px solid var(--gold);
+    border-radius:14px;padding:18px 20px;margin-bottom:30px;font-size:15px;color:#5a4422}
+  .note b{color:#8a5a13}
+
+  /* ---------------- FILTER CHIPS ---------------- */
+  .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;position:sticky;top:54px;z-index:20;padding:6px 0}
+  .chip{cursor:pointer;border:1.5px solid var(--line);background:#fff;border-radius:30px;padding:8px 16px;font-weight:600;font-size:13.5px;
+    display:flex;align-items:center;gap:7px;transition:.15s;color:var(--ink-2)}
+  .chip .sw{width:11px;height:11px;border-radius:50%}
+  .chip:hover{border-color:var(--ink-2)}
+  .chip.off{opacity:.4}
+  .chip.allchip{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+  .chip.allchip.off{opacity:.4}
+
+  /* ---------------- ACT + DAY CARDS ---------------- */
+  .act-banner{display:flex;align-items:baseline;gap:14px;margin:8px 0 26px;padding-bottom:14px;border-bottom:3px solid var(--ink)}
+  .act-banner .num{font-family:"Bricolage Grotesque";font-weight:800;font-size:54px;color:var(--stone-2);-webkit-text-stroke:2px var(--ink);line-height:.8}
+  .act-banner h3{font-size:clamp(22px,4vw,32px);font-weight:800}
+  .act-banner .meta{margin-left:auto;font-weight:600;color:var(--ink-2);font-size:14px;text-align:right;white-space:nowrap}
+
+  .day{background:#fff;border:1px solid var(--line);border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:var(--shadow);
+    transition:opacity .25s, transform .25s;border-left:6px solid var(--crimson)}
+  .day.hide{display:none}
+  .day-top{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;flex-wrap:wrap}
+  .daynum{flex:0 0 auto;text-align:center;background:var(--ink);color:var(--stone);border-radius:13px;padding:10px 14px;min-width:74px}
+  .daynum .d{font-family:"Bricolage Grotesque";font-weight:800;font-size:24px;line-height:1;color:var(--gold-2)}
+  .daynum .wd{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-l);margin-top:3px}
+  .daynum .mo{font-size:12px;color:#e7d6bb}
+  .day-headtext{flex:1 1 320px;min-width:240px}
+  .day-loc{font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--crimson);display:flex;align-items:center;gap:6px}
+  .day-headtext h4{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(20px,3vw,27px);margin:5px 0 8px}
+  .day-headtext .blurb{color:var(--ink-2);font-size:15.5px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+  .tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;color:#fff}
+
+  .moves{padding:0 24px 8px 24px}
+  .move{display:flex;gap:13px;padding:13px 0;border-top:1px dashed var(--line)}
+  .move .mi{flex:0 0 auto;font-size:22px;width:30px;text-align:center}
+  .move .mt b{font-weight:700}
+  .move .mt{font-size:15.5px}
+  .day-foot{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:14px 24px 20px;background:var(--stone);border-top:1px solid var(--line)}
+  .tip{flex:1 1 320px;font-size:14px;color:var(--ink-2)}
+  .tip b{color:var(--crimson)}
+  .blinks{display:flex;gap:8px;flex-wrap:wrap}
+  .blink{text-decoration:none;font-weight:700;font-size:13px;background:#fff;border:1.5px solid var(--ink);border-radius:9px;padding:7px 13px;transition:.15s}
+  .blink:hover{background:var(--ink);color:var(--stone)}
+  .blink::after{content:" ↗";font-weight:400}
+
+  /* ---------------- BOOK AHEAD ---------------- */
+  .book{background:#1d1417;color:#fbf2e2}
+  .book .sec-head h2{color:#fff}
+  .book .sec-head .kick{color:var(--gold-2)}
+  .book .sec-head p{color:#e7d6bb}
+  .progress-wrap{background:rgba(255,255,255,.12);border-radius:30px;height:16px;overflow:hidden;margin:6px 0 4px;border:1px solid rgba(227,192,90,.3)}
+  .progress-wrap>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--crimson),var(--gold-2));transition:width .4s}
+  .progress-label{font-weight:700;font-size:14px;color:var(--gold-2);margin-bottom:22px}
+  .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:720px){.checklist{grid-template-columns:1fr}}
+  .check{display:flex;gap:13px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(227,192,90,.16);
+    border-radius:13px;padding:15px 17px;cursor:pointer;transition:.15s}
+  .check:hover{background:rgba(255,255,255,.11)}
+  .check .box{flex:0 0 auto;width:26px;height:26px;border-radius:7px;border:2px solid var(--gold-2);display:flex;align-items:center;justify-content:center;font-weight:800;transition:.15s;color:transparent}
+  .check.done .box{background:var(--gold-2);color:#1d1417}
+  .check .ct b{display:block;font-family:"Bricolage Grotesque";font-weight:700;font-size:15.5px}
+  .check.done .ct b{text-decoration:line-through;opacity:.7}
+  .check .ct span{font-size:13.5px;color:#e7d6bb}
+  .urgent{color:var(--gold-2);font-weight:700;font-size:12px;letter-spacing:.05em}
+
+  /* ---------------- TIPS ---------------- */
+  .tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:820px){.tipgrid{grid-template-columns:1fr}}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .tcard.flag{border-left:6px solid var(--crimson)}
+  .tcard .ic{font-size:30px}
+  .tcard h4{font-family:"Bricolage Grotesque";font-weight:800;font-size:18px;margin:10px 0 6px}
+  .tcard p{font-size:14.5px;color:var(--ink-2)}
+  .tcard p b{color:var(--ink)}
+
+  footer{background:var(--ink);color:#cdb196;padding:46px 0 60px;font-size:13.5px}
+  footer h4{font-family:"Bricolage Grotesque";color:var(--stone);font-weight:800;font-size:18px;margin-bottom:10px}
+  footer a{color:var(--gold-l);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .srcs{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:10px}
+  .disclaim{margin-top:26px;color:#9b8569;font-size:12.5px;max-width:74ch}
+  .sign{margin-top:18px;font-size:14px;color:#e7d6bb}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="medallion"></div>
+  <svg class="mtn" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a2e"/><stop offset="1" stop-color="#241a1d"/></linearGradient>
+      <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2a30"/><stop offset="1" stop-color="#321e23"/></linearGradient>
+      <linearGradient id="m3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e2630"/><stop offset="1" stop-color="#3e1a22"/></linearGradient>
+    </defs>
+    <!-- back ridge -->
+    <path fill="url(#m3)" d="M0 250 L150 120 L250 200 L380 90 L520 200 L660 80 L800 200 L940 110 L1080 210 L1200 150 L1200 420 L0 420 Z" opacity=".95"/>
+    <!-- mid ridge -->
+    <path fill="url(#m2)" d="M0 310 L120 200 L260 320 L400 190 L540 320 L690 180 L840 320 L980 210 L1120 320 L1200 270 L1200 420 L0 420 Z"/>
+    <!-- front ridge -->
+    <path fill="url(#m1)" d="M0 370 L160 270 L320 380 L480 260 L640 380 L800 270 L940 380 L1090 290 L1200 365 L1200 420 L0 420 Z"/>
+    <!-- gold rim light on peaks -->
+    <path fill="none" stroke="#c79a2b" stroke-width="2" opacity=".55" d="M380 90 L520 200 M660 80 L800 200"/>
+    <!-- snow caps -->
+    <path fill="#f3ead6" opacity=".82" d="M660 80 l22 36 l-12 -6 l-11 11 l-9 -9 l-8 6 Z"/>
+    <path fill="#f3ead6" opacity=".7" d="M380 90 l20 32 l-11 -5 l-9 9 l-8 -7 Z"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">Option two · The Black Mountain 💛</div>
+    <h1>Mwitwa in<br><span class="o">Montenegro</span></h1>
+    <div class="dates">26 June → 2 July 2026 · 6 nights · stone towns, sea &amp; summits 🇲🇪</div>
+    <p class="sub">Raft a glacial canyon, fly over the Adriatic riviera, climb a fortress wall above an old Venetian town, and cook a real mountain feast with a local family. Tiny country, enormous trip.</p>
+    <div class="crewtag">👩‍⚕️ Solo, fearless &amp; very well-earned — Dr Mwitwa Kafula</div>
+    <div class="hero-stats">
+      <div class="hstat"><b>6</b><span>nights exploring</span></div>
+      <div class="hstat"><b>⛰️</b><span>Durmitor &amp; Tara</span></div>
+      <div class="hstat"><b>~28°C</b><span>dry-June coast</span></div>
+      <div class="hstat"><b>🏰</b><span>UNESCO Kotor</span></div>
+    </div>
+  </div>
+</header>
+<div class="folk"></div>
+
+<!-- ===== ROUTE STRIP ===== -->
+<div class="route">
+  <div class="container">
+    <div class="route-scroll">
+      <div class="stop"><div class="dot">✈️</div><div class="nm">Tivat (TIV)</div><div class="nights">land</div></div>
+      <div class="leg"><div class="ln"></div>~15 min</div>
+      <div class="stop"><div class="dot">🏰</div><div class="nm">Kotor</div><div class="nights">coast base</div></div>
+      <div class="leg"><div class="ln"></div>~3 hrs</div>
+      <div class="stop"><div class="dot">⛰️</div><div class="nm">Durmitor / Tara</div><div class="nights">1 night N</div></div>
+      <div class="leg"><div class="ln"></div>back S</div>
+      <div class="stop"><div class="dot">🪂</div><div class="nm">Budva riviera</div><div class="nights">day trips</div></div>
+      <div class="leg"><div class="ln"></div>~30 min</div>
+      <div class="stop"><div class="dot">🏖️</div><div class="nm">Sveti Stefan</div><div class="nights">send-off</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-inner">
+    <span class="brand">🦅 Montenegro '26</span>
+    <a href="#act1" class="navlink">Act I · Bay of Kotor</a>
+    <a href="#act2" class="navlink">Act II · The Black Mountain</a>
+    <a href="#act3" class="navlink">Act III · Riviera &amp; Farewell</a>
+    <a href="#book" class="navlink">Book Ahead</a>
+    <a href="#tips" class="navlink">Solo Survival Kit</a>
+  </div>
+</nav>
+
+<!-- ===== ITINERARY ===== -->
+<section id="itinerary">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kick">The Plan</div>
+      <h2>Day by day</h2>
+      <p>Three acts: settle into the stone towns of the Bay of Kotor, run north to the glacial canyons and black peaks for the big adrenaline, then come back to the coast for flying, food and a final swim. Filter by what you fancy — tap a chip to dim the rest.</p>
+    </div>
+
+    <div class="note">
+      <b>Why this one's a strong pick for you:</b> Montenegro genuinely delivers your wishlist — <b>quad-biking, ziplining and parasailing all really exist here</b>, plus white-water rafting and paragliding. And <b>late June on the coast is warm (~28°C) and one of the driest, sunniest months</b> — so your "great weather, no rain" wish has real odds here. Two honest notes: <b>skydiving does exist</b> in Montenegro but it's inland near Podgorica (a detour) — the everyday riviera thrill is <b>tandem paragliding</b>; and snorkelling here is the <b>clear-but-cool Adriatic</b> (sea caves, island coves, a few wrecks), not tropical reef. More on both in the <a href="#tips" style="color:#8a5a13;font-weight:700">Solo Survival Kit</a>.
+    </div>
+
+    <div class="filters" id="filters">
+      <div class="chip allchip" data-tag="all">All days</div>
+      <div class="chip" data-tag="culture"><span class="sw" style="background:var(--tag-culture)"></span>Culture</div>
+      <div class="chip" data-tag="food"><span class="sw" style="background:var(--tag-food)"></span>Food &amp; cooking</div>
+      <div class="chip" data-tag="adrenaline"><span class="sw" style="background:var(--tag-adrenaline)"></span>Adrenaline</div>
+      <div class="chip" data-tag="mountains"><span class="sw" style="background:var(--tag-mountains)"></span>Mountains</div>
+      <div class="chip" data-tag="sea"><span class="sw" style="background:var(--tag-sea)"></span>Sea &amp; swim</div>
+      <div class="chip" data-tag="chill"><span class="sw" style="background:var(--tag-chill)"></span>Chill</div>
+      <div class="chip" data-tag="travel"><span class="sw" style="background:var(--tag-travel)"></span>Travel</div>
+    </div>
+
+    <div id="acts"></div>
+  </div>
+</section>
+
+<!-- ===== BOOK AHEAD ===== -->
+<section id="book" class="book">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kick">Don't get caught out</div>
+      <h2>Sort before you fly</h2>
+      <p>Late June is high season on the coast — the best rafting/zipline slots, the north tour and coastal stays fill up. Lock these in — tap to tick them off (saved on this device).</p>
+    </div>
+    <div class="progress-wrap"><i id="progBar"></i></div>
+    <div class="progress-label" id="progLabel">0 of 0 sorted</div>
+    <div class="checklist" id="checklist"></div>
+  </div>
+</section>
+
+<!-- ===== SURVIVAL KIT ===== -->
+<section id="tips">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kick">Local knowledge, just for you</div>
+      <h2>The solo survival kit</h2>
+      <p>The bits the brochures skip — so you arrive knowing how the place actually works, and travel smart and safe.</p>
+    </div>
+    <div class="tipgrid">
+      <div class="tcard flag"><div class="ic">🪂</div><h4>Skydiving vs paragliding</h4><p>Good news, with honesty: <b>skydiving does exist in Montenegro</b> — a real operator runs tandem jumps near <b>Podgorica</b> (inland) — but it's a ~1.5–2 hr drive from the coast and jumps over the capital, not the sea. The everyday "flying" thrill on this trip is <b>tandem paragliding over the Budva riviera</b>, launching from the hills straight above the coast. I've built paragliding in; do the Podgorica skydive as a bolt-on day if you're set on the freefall.</p></div>
+      <div class="tcard"><div class="ic">☀️</div><h4>The weather actually delivers</h4><p>Unlike a lot of places in June, the Montenegrin coast in late June is <b>reliably warm (~28°C) and dry</b> — it's one of the sunniest months, sea around 24°C. Your "no rain" wish has genuinely good odds. The <b>mountains run ~10°C cooler</b> and can turn quickly, so pack one warm layer + a light shell for the Durmitor leg.</p></div>
+      <div class="tcard flag"><div class="ic">🤿</div><h4>Snorkelling, Adriatic-style</h4><p>Manage the expectation: this isn't the tropics. The Adriatic is <b>gin-clear but cooler</b>, with <b>sea caves (the Blue Cave), rocky island coves and a few wrecks</b> rather than coral reefs and shoals of fish. It's gorgeous swimming and freediving — just a different vibe to the Maldives option.</p></div>
+      <div class="tcard"><div class="ic">🚐</div><h4>Getting around solo</h4><p>Montenegro is tiny, but the <b>coast-to-mountains drive is long &amp; winding</b>. As a solo traveller you don't have to drive it: <b>guided day-tours to Durmitor &amp; Tara</b> handle the wheel (and the rafting/zip logistics). On the coast, towns are walkable and <b>taxis/Bolt</b> are cheap. Hire a car only if you want total freedom.</p></div>
+      <div class="tcard"><div class="ic">⛪</div><h4>Culture &amp; etiquette</h4><p>Handy: Montenegro uses the <b>euro</b> (even though it's not in the EU), and most visitors get <b>90 days visa-free</b>. At <b>Ostrog Monastery</b> and churches, <b>dress modestly</b> (shoulders &amp; knees covered; a scarf helps). Carry <b>cash</b> for fortress &amp; park entries, tip ~10%, and a little "<b>hvala</b>" (thank you) goes a long way.</p></div>
+      <div class="tcard"><div class="ic">👩‍🦱</div><h4>Solo &amp; female — you're good</h4><p>Montenegro is <b>safe and welcoming</b> for solo women, with a lively, social coast in summer. Smart habits: <b>licensed tour operators</b>, share your day plan with your guesthouse, keep valuables close in busy Budva, and you'll have a brilliant, easy time of it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="folk"></div>
+<footer>
+  <div class="container">
+    <h4>The intel behind the plan</h4>
+    <p>Operators, sights and routes pulled from these sources — book direct via the links on each day.</p>
+    <div class="srcs">
+      <a href="https://montenegroairports.com/en/tivat-airport/" target="_blank" rel="noopener">Tivat Airport (TIV)</a>
+      <a href="https://www.visit-montenegro.com/destinations/kotor/" target="_blank" rel="noopener">Kotor &amp; Bay of Kotor</a>
+      <a href="https://www.getyourguide.com/kotor-l32202/kotor-perast-old-town-and-our-lady-of-the-rock-boat-tour-t128505/" target="_blank" rel="noopener">Perast &amp; Our Lady boat</a>
+      <a href="https://adriaticways.com/kotor-fortress-city-walls/" target="_blank" rel="noopener">Kotor fortress walls</a>
+      <a href="https://www.getyourguide.com/zabljak-l32613/tara-bridge-the-longest-and-the-fastest-zip-line-adventure-t964147/" target="_blank" rel="noopener">Tara Canyon zipline</a>
+      <a href="https://www.getyourguide.com/kotor-l32202/tara-river-whitewater-rafting-from-kotor-t92724/" target="_blank" rel="noopener">Tara rafting</a>
+      <a href="https://nparkovi.me/parks/Durmitor" target="_blank" rel="noopener">Durmitor National Park</a>
+      <a href="https://manastirostrog.com/en/" target="_blank" rel="noopener">Ostrog Monastery</a>
+      <a href="https://www.getyourguide.com/budva-l32215/budva-paragliding-montenegro-flying-adventures-t242852/" target="_blank" rel="noopener">Paragliding (Budva)</a>
+      <a href="https://www.getyourguide.com/kotor-l32202/quad-atv-tours-tc38/" target="_blank" rel="noopener">Quad / ATV tours</a>
+      <a href="https://www.getyourguide.com/budva-l32215/blue-cave-kotor-more-boat-trip-from-budva-or-kotor-t786831/" target="_blank" rel="noopener">Blue Cave boat</a>
+      <a href="https://www.getyourguide.com/kotor-l32202/kotor-cooking-class-in-a-local-home-old-town-walking-tour-t417544/" target="_blank" rel="noopener">Kotor cooking class</a>
+      <a href="https://www.getyourguide.com/njegusi-l124888/kotor-cable-car-njegusi-lovcen-and-kotor-cable-car-t570608/" target="_blank" rel="noopener">Lovćen &amp; Njeguši taste</a>
+      <a href="https://www.getyourguide.com/kotor-l32202/kotor-full-day-north-montenegro-tour-t215937/" target="_blank" rel="noopener">North day-tour (Durmitor/Tara)</a>
+      <a href="https://podgorica.travel/en/skydiving-podgorica/" target="_blank" rel="noopener">Skydiving (Podgorica)</a>
+    </div>
+    <p class="disclaim">Itinerary built June 2026 as a gift, coast-based with one night north. Prices, schedules and opening times change — confirm everything when you book, especially rafting/zipline dates &amp; water levels, the north tour, paragliding (weather-dependent) and monastery/park opening hours. Mountain weather can turn fast; the Tara water is cold snowmelt even in summer. Travel insurance with rafting / paragliding / adventure cover is a must.</p>
+    <p class="sign">Two trips, one impossible choice. Whichever you pick — go all in, say yes to the scary stuff, eat everything. — with love 💛</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+"use strict";
+const $ = s => document.querySelector(s);
+
+/* ---------------- itinerary data ---------------- */
+const TAGS = {
+  culture:{label:"Culture",c:"var(--tag-culture)"},
+  food:{label:"Food",c:"var(--tag-food)"},
+  adrenaline:{label:"Adrenaline",c:"var(--tag-adrenaline)"},
+  mountains:{label:"Mountains",c:"var(--tag-mountains)"},
+  sea:{label:"Sea & swim",c:"var(--tag-sea)"},
+  chill:{label:"Chill",c:"var(--tag-chill)"},
+  travel:{label:"Travel",c:"var(--tag-travel)"},
+};
+
+const ACTS = [
+  { id:"act1", num:"I", title:"The Bay of Kotor", meta:"Jun 26–27 · stone &amp; sea",
+    days:[
+    { d:26, wd:"Fri", mo:"Jun", loc:"Tivat → Kotor", emoji:"🛬", title:"Land on the bay, into the old town",
+      tags:["travel","culture","chill"],
+      blurb:"Fly into Tivat (TIV), right on the water — Kotor is a 15-minute hop around Europe's most dramatic bay. Drop your bag and step straight into a labyrinth of Venetian stone.",
+      moves:[
+        {i:"🚕",t:"Quick transfer (or coastal bus) from <b>Tivat</b> around the Bay of Kotor — one of the prettiest airport runs anywhere."},
+        {i:"🏰",t:"Lose yourself in <b>Kotor Old Town</b> — a UNESCO maze of squares, churches and cats, wrapped in medieval walls right under the mountain."},
+        {i:"🍷",t:"First-night dinner on a candlelit square: fresh fish, local Vranac red wine, and an early one to set up the week."},
+      ],
+      tip:"Most visitors get <b>90 days visa-free</b> and Montenegro runs on the <b>euro</b>. Grab some cash on arrival — old-town spots and entry tickets often want it.",
+      links:[{t:"Tivat Airport",u:"https://montenegroairports.com/en/tivat-airport/"},{t:"Kotor guide",u:"https://www.visit-montenegro.com/destinations/kotor/"}] },
+
+    { d:27, wd:"Sat", mo:"Jun", loc:"Bay of Kotor", emoji:"⛪", title:"Perast, island churches & the fortress climb",
+      tags:["culture","sea","chill"],
+      blurb:"A full day in the bay: a boat to a man-made island church, then the legendary climb up the city walls for the view that's on every postcard.",
+      moves:[
+        {i:"⛵",t:"Morning boat to <b>Perast &amp; Our Lady of the Rocks</b> — a tiny island built by sailors over centuries, with a church full of votive offerings and silver."},
+        {i:"🧗‍♀️",t:"Cooler afternoon: climb the <b>1,350 steps of St John's Fortress</b> up Kotor's walls for a jaw-dropping look down the fjord-like bay. Take water."},
+        {i:"🛍️",t:"Wind down in the old town — a leather/filigree souvenir, an ice cream, people-watching on the marble squares."},
+      ],
+      tip:"Do the fortress climb <b>early morning or after 5pm</b> to dodge the midday heat and cruise crowds. There's a small cash entry fee at the gate in season.",
+      links:[{t:"Perast & Our Lady boat",u:"https://www.getyourguide.com/kotor-l32202/kotor-perast-old-town-and-our-lady-of-the-rock-boat-tour-t128505/"},{t:"Kotor fortress walls",u:"https://adriaticways.com/kotor-fortress-city-walls/"}] },
+  ]},
+
+  { id:"act2", num:"II", title:"The Black Mountain", meta:"Jun 28–29 · 1 night north",
+    days:[
+    { d:28, wd:"Sun", mo:"Jun", loc:"Tara Canyon", emoji:"🛶", title:"Raft & zipline the deepest canyon in Europe",
+      tags:["adrenaline","mountains","travel"],
+      blurb:"The big adrenaline day. Head north to the Tara — the deepest river canyon in Europe — for white water and a flight across the gorge, then sleep up in the mountains.",
+      moves:[
+        {i:"🛶",t:"<b>Tara River white-water rafting</b> — emerald snowmelt, rapids and cliffs over 1,000m high. Guided, beginner-friendly, exhilarating (and cold — that's half the fun)."},
+        {i:"🪢",t:"<b>Zipline across the Tara gorge</b> at the Đurđevića Tara bridge — one of the longest, fastest lines around, flying you right over the canyon."},
+        {i:"🏔️",t:"Check in near <b>Žabljak</b> (Durmitor) — mountain air, a hearty highland dinner, and a proper night's sleep at altitude."},
+      ],
+      tip:"Solo &amp; not keen on the long mountain drive? Book a <b>guided rafting + transfer</b> from the coast, or the full <b>north day-tour</b> — they handle the wheel and the logistics. The Tara water is cold even in July, so embrace the wetsuit.",
+      links:[{t:"Tara rafting (from coast)",u:"https://www.getyourguide.com/kotor-l32202/tara-river-whitewater-rafting-from-kotor-t92724/"},{t:"Tara Canyon zipline",u:"https://www.getyourguide.com/zabljak-l32613/tara-bridge-the-longest-and-the-fastest-zip-line-adventure-t964147/"}] },
+
+    { d:29, wd:"Mon", mo:"Jun", loc:"Durmitor → coast", emoji:"⛰️", title:"Black Lake, Durmitor & a clifftop monastery",
+      tags:["mountains","culture","travel"],
+      blurb:"A morning in the high country, then a scenic run back to the coast via Montenegro's most astonishing monastery.",
+      moves:[
+        {i:"🥾",t:"Easy morning loop around <b>Black Lake (Crno jezero)</b> in Durmitor National Park — glassy water, pines and peaks reflected, gentle and beautiful."},
+        {i:"⛪",t:"Break the drive south at <b>Ostrog Monastery</b> — a white church carved improbably into a sheer cliff face, Montenegro's most important pilgrimage site."},
+        {i:"🌅",t:"Back to your <b>Kotor/Budva base</b> by evening for a relaxed dinner — you've earned the comfy bed by the sea."},
+      ],
+      tip:"<b>Dress modestly at Ostrog</b> (shoulders &amp; knees covered; women a scarf). Buy your <b>Durmitor park ticket</b> at the official desk. If you'd rather not drive, the north day-tour rolls all of this into one.",
+      links:[{t:"Durmitor National Park",u:"https://nparkovi.me/parks/Durmitor"},{t:"Ostrog Monastery",u:"https://manastirostrog.com/en/"},{t:"North day-tour (all-in-one)",u:"https://www.getyourguide.com/kotor-l32202/kotor-full-day-north-montenegro-tour-t215937/"}] },
+  ]},
+
+  { id:"act3", num:"III", title:"Riviera, flavour & farewell", meta:"Jun 30 – Jul 2 · the coast",
+    days:[
+    { d:30, wd:"Tue", mo:"Jun", loc:"Budva riviera", emoji:"🪂", title:"Fly the riviera: paraglide, parasail & quad",
+      tags:["adrenaline","sea"],
+      blurb:"Your coastal thrill day, all from the buzzy Budva riviera — the closest the Maldives wishlist gets to skydiving, and then some.",
+      moves:[
+        {i:"🪂",t:"<b>Tandem paragliding</b> off the hills above Bečići/Brajići — run, lift, and soar in silence high over the turquoise riviera with an instructor. The big one."},
+        {i:"🚤",t:"<b>Parasailing</b> off Bečići/Slovenska beach — winched up behind a boat for a calmer, salt-spray version of the view (walk-up on the beach, ~€50)."},
+        {i:"🏍️",t:"Switch to land: a <b>quad-bike / ATV tour</b> into the hills behind the coast — old forts, olive groves and big Boka Bay panoramas, mud and grins included."},
+      ],
+      tip:"Paragliding is <b>weather-dependent</b> — book it for earlier in the day and keep a flex slot, as afternoon wind can ground flights. Wear trainers you don't mind getting dusty for the quads.",
+      links:[{t:"Tandem paragliding",u:"https://www.getyourguide.com/budva-l32215/budva-paragliding-montenegro-flying-adventures-t242852/"},{t:"Quad / ATV tours",u:"https://www.getyourguide.com/kotor-l32202/quad-atv-tours-tc38/"},{t:"Parasailing (Bečići)",u:"https://www.tripadvisor.com/Attractions-g1026798-Activities-c61-t192-Becici_Budva_Municipality.html"}] },
+
+    { d:1, wd:"Wed", mo:"Jul", loc:"Lovćen & Njeguši", emoji:"🍳", title:"Mountain villages, prosciutto & a cooking class",
+      tags:["culture","food","chill"],
+      blurb:"Your 'immerse in local culture' day — up into the old royal heartland for the food and traditions Montenegro is proudest of, then cook a feast yourself.",
+      moves:[
+        {i:"🧀",t:"Head up to <b>Njeguši</b>, the village famous for <b>pršut (smoked prosciutto) &amp; cheese</b> — taste the country's signature flavours at the source, cured in this exact mountain air."},
+        {i:"👑",t:"Take in <b>Lovćen National Park</b> — the Njegoš Mausoleum on the peak, sweeping views — the symbolic heart of Montenegrin identity (reachable via the new Kotor cable car)."},
+        {i:"🍳",t:"Finish with a <b>hands-on Montenegrin cooking class in a local home</b> — learn a traditional dish or two, then sit down and eat what you made with your hosts."},
+      ],
+      tip:"The Kotor–Lovćen <b>cable car</b> makes this loop easy without a hire car. Come hungry — between the pršut tasting and the cooking class, this is the most delicious day of the trip.",
+      links:[{t:"Lovćen & Njeguši taste",u:"https://www.getyourguide.com/njegusi-l124888/kotor-cable-car-njegusi-lovcen-and-kotor-cable-car-t570608/"},{t:"Kotor cooking class",u:"https://www.getyourguide.com/kotor-l32202/kotor-cooking-class-in-a-local-home-old-town-walking-tour-t417544/"}] },
+
+    { d:2, wd:"Thu", mo:"Jul", loc:"Coast → Tivat", emoji:"🏖️", title:"Sea caves, a last swim & home",
+      tags:["sea","chill","travel"],
+      blurb:"Finish on the water. Depending on your flight time, squeeze in the prettiest swim of the trip before the short hop back to Tivat.",
+      moves:[
+        {i:"🚤",t:"Morning <b>Blue Cave boat trip</b> — sail the Luštica coast to a sea cave that glows electric blue, with snorkel/swim stops in clear coves along the way."},
+        {i:"🏝️",t:"Or keep it simple: a water-taxi to <b>Sveti Nikola island</b> off Budva for a final swim, and a photo stop at the iconic <b>Sveti Stefan</b> island viewpoint."},
+        {i:"✈️",t:"Short transfer to <b>Tivat (TIV)</b> and fly home — sun-kissed, a little canyon-bruised, full of pršut and stories."},
+      ],
+      tip:"If your flight's later you can fit the Blue Cave trip <i>and</i> Sveti Stefan; if it's earlier, pick one and leave a comfortable buffer for the airport. Sveti Stefan island is a private resort — the magic is the <b>viewpoint</b>, which is free.",
+      links:[{t:"Blue Cave boat",u:"https://www.getyourguide.com/budva-l32215/blue-cave-kotor-more-boat-trip-from-budva-or-kotor-t786831/"},{t:"Sveti Nikola island",u:"https://www.visit-montenegro.com/destinations/budva/attractions/sveti-nikola-island/"},{t:"Sveti Stefan guide",u:"https://adriaticways.com/sveti-stefan-guide/"}] },
+  ]},
+];
+
+/* ---------------- render ---------------- */
+function dayHTML(day){
+  const tags = day.tags.map(t=>`<span class="tag" style="background:${TAGS[t].c}">${TAGS[t].label}</span>`).join("");
+  const moves = day.moves.map(m=>`<div class="move"><div class="mi">${m.i}</div><div class="mt">${m.t}</div></div>`).join("");
+  const links = (day.links||[]).map(l=>`<a class="blink" href="${l.u}" target="_blank" rel="noopener">${l.t}</a>`).join("");
+  return `<article class="day" data-tags="${day.tags.join(' ')}">
+    <div class="day-top">
+      <div class="daynum"><div class="d">${day.d}</div><div class="wd">${day.wd}</div><div class="mo">${day.mo}</div></div>
+      <div class="day-headtext">
+        <div class="day-loc">📍 ${day.loc}</div>
+        <h4>${day.emoji} ${day.title}</h4>
+        <div class="blurb">${day.blurb}</div>
+        <div class="tags">${tags}</div>
+      </div>
+    </div>
+    <div class="moves">${moves}</div>
+    <div class="day-foot">
+      <div class="tip">💡 <b>Pro move:</b> ${day.tip}</div>
+      ${links?`<div class="blinks">${links}</div>`:""}
+    </div>
+  </article>`;
+}
+function actHTML(act){
+  return `<div class="act" id="${act.id}">
+    <div class="act-banner"><span class="num">${act.num}</span><h3>${act.title}</h3><span class="meta">${act.meta}</span></div>
+    ${act.days.map(dayHTML).join("")}
+  </div>`;
+}
+$("#acts").innerHTML = ACTS.map(actHTML).join("");
+
+/* ---------------- filter chips ---------------- */
+const active = new Set();  // empty = show all
+function applyFilter(){
+  document.querySelectorAll(".day").forEach(d=>{
+    const tags = d.dataset.tags.split(" ");
+    const show = active.size===0 || tags.some(t=>active.has(t));
+    d.classList.toggle("hide", !show);
+  });
+  document.querySelectorAll(".act").forEach(a=>{
+    const anyVisible = a.querySelector(".day:not(.hide)");
+    a.style.display = anyVisible ? "" : "none";
+  });
+}
+$("#filters").addEventListener("click", e=>{
+  const chip = e.target.closest(".chip"); if(!chip) return;
+  const tag = chip.dataset.tag;
+  if(tag==="all"){ active.clear(); }
+  else { active.has(tag) ? active.delete(tag) : active.add(tag); }
+  document.querySelectorAll(".chip").forEach(c=>{
+    if(c.dataset.tag==="all") c.classList.toggle("off", active.size!==0);
+    else c.classList.toggle("off", active.size!==0 && !active.has(c.dataset.tag));
+  });
+  applyFilter();
+});
+
+/* ---------------- book-ahead checklist (localStorage) ---------------- */
+const CHECKS = [
+  {id:"flights", t:"Flights to Tivat (TIV)", s:"Best airport for the coast. Podgorica (TGD) is an alt. Book early for late June.", urgent:true},
+  {id:"base", t:"Coast base (Kotor or Budva) — 5 nights", s:"Central, walkable, female-friendly. Kotor = old-world; Budva = livelier/beachy.", urgent:true},
+  {id:"northstay", t:"1 night up north (Žabljak/Durmitor)", s:"For the Tara + Durmitor leg. Or skip and do the long guided day-tour instead.", urgent:true},
+  {id:"rafting", t:"Tara rafting + zipline — Jun 28", s:"Peak-season slots sell out. Book the combo or a rafting+transfer from the coast.", urgent:true},
+  {id:"northtour", t:"Guided north tour OR hire car", s:"Solo? The guided Durmitor/Tara tour handles the mountain driving for you.", urgent:false},
+  {id:"paragliding", t:"Tandem paragliding — Jun 30", s:"Weather-dependent — book an early slot and keep a flex day.", urgent:false},
+  {id:"quad", t:"Quad / ATV tour — Jun 30", s:"Hills behind the coast — forts, olive groves, Boka views.", urgent:false},
+  {id:"cooking", t:"Cooking class + Njeguši taste — Jul 1", s:"The culture highlight. Small groups — book a couple of days ahead.", urgent:false},
+  {id:"perast", t:"Perast & Our Lady boat — Jun 27", s:"Easy to arrange on the day too, but pre-book in peak season.", urgent:false},
+  {id:"bluecave", t:"Blue Cave boat (final day)", s:"Best swim/snorkel of the trip — if your flight time allows.", urgent:false},
+  {id:"insurance", t:"Travel insurance (adventure cover)", s:"Must cover rafting, paragliding, ziplining & quads.", urgent:true},
+  {id:"skydive", t:"(Optional) Skydive near Podgorica", s:"Only if you're set on the freefall — it's an inland detour day.", urgent:false},
+];
+const SKEY = "montenegro26.checks";
+let done = {};
+try{ done = JSON.parse(localStorage.getItem(SKEY)) || {}; }catch(e){ done = {}; }
+function renderChecks(){
+  $("#checklist").innerHTML = CHECKS.map(c=>`
+    <div class="check ${done[c.id]?'done':''}" data-id="${c.id}">
+      <div class="box">✓</div>
+      <div class="ct"><b>${c.t}</b><span>${c.s}</span>${c.urgent?'<div class="urgent">⚠ SORT EARLY</div>':''}</div>
+    </div>`).join("");
+  const n = CHECKS.filter(c=>done[c.id]).length;
+  $("#progBar").style.width = Math.round(n/CHECKS.length*100)+"%";
+  $("#progLabel").textContent = `${n} of ${CHECKS.length} sorted` + (n===CHECKS.length ? " — you're ready to fly 🦅" : "");
+}
+$("#checklist").addEventListener("click", e=>{
+  const el = e.target.closest(".check"); if(!el) return;
+  const id = el.dataset.id; done[id] = !done[id];
+  try{ localStorage.setItem(SKEY, JSON.stringify(done)); }catch(e){}
+  renderChecks();
+});
+renderChecks();
+
+/* ---------------- nav scroll-spy ---------------- */
+const links = [...document.querySelectorAll(".navlink")];
+const ids = ["act1","act2","act3","book","tips"];
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      links.forEach(l=>l.classList.toggle("on", l.getAttribute("href")==="#"+en.target.id));
+    }
+  });
+},{rootMargin:"-45% 0px -50% 0px"});
+ids.forEach(id=>{ const el=document.getElementById(id); if(el) io.observe(el); });
+})();
+</script>
+</body>
+</html>
