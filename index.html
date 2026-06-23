@@ -230,6 +230,7 @@
     <a href="#act2" class="navlink">Act II · The Black Mountain</a>
     <a href="#act3" class="navlink">Act III · Riviera &amp; Farewell</a>
     <a href="#book" class="navlink">Book Ahead</a>
+    <a href="#budget" class="navlink">Budget</a>
     <a href="#tips" class="navlink">Solo Survival Kit</a>
   </div>
 </nav>
@@ -277,6 +278,23 @@
 </section>
 
 <!-- ===== SURVIVAL KIT ===== -->
+<section id="budget">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kick">The money bit</div>
+      <h2>Roughly what it costs</h2>
+      <p>A ballpark for one person, 6 nights, mid-range, travelling from the UK in late June 2026 — to compare, not a quote. The big swings are your flights and how fancy your stay is.</p>
+    </div>
+    <div class="note"><b>~£1,100–£1,500 all-in</b> including return flights from the UK — great value. Day-to-day spend (food &amp; getting around): roughly <b>£40–55/day</b>.</div>
+    <div class="tipgrid">
+      <div class="tcard"><div class="ic">✈️</div><h4>Flights · ~£120–250</h4><p>UK → Tivat (TIV) return — budget airlines fly it through summer.</p></div>
+      <div class="tcard"><div class="ic">🏔️</div><h4>6 nights · ~£300–420</h4><p>Coast apartment/guesthouse for 5 nights + 1 night up north near Durmitor.</p></div>
+      <div class="tcard"><div class="ic">🤸</div><h4>Activities · ~£280–400</h4><p>Tara rafting + zipline, paragliding, quad, Perast boat, Lovćen/Njeguši, Blue Cave.</p></div>
+      <div class="tcard"><div class="ic">🚗</div><h4>Food, car &amp; local · ~£40–55/day</h4><p>Cheap, hearty food; add a hire car (~£30/day) or guided day-tours for the north.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="tips">
   <div class="container">
     <div class="sec-head">
@@ -520,7 +538,7 @@ renderChecks();
 
 /* ---------------- nav scroll-spy ---------------- */
 const links = [...document.querySelectorAll(".navlink")];
-const ids = ["act1","act2","act3","book","tips"];
+const ids = ["act1","act2","act3","book","budget","tips"];
 const io = new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(en.isIntersecting){
